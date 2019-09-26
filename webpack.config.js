@@ -11,7 +11,7 @@ module.exports = {
   module : {
     rules : [
       {
-        test : /\.jsx?/,
+        test : /\.jsx?$/,
         include : SRC_DIR,
         exclude: /node_modules/,
         loader : 'babel-loader',
@@ -29,7 +29,30 @@ module.exports = {
             },
           },
         ]
+      },
+      {
+        test: /\.(ttf|eot|svg|gif|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        include: SRC_DIR,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
       }
     ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
   }
 };
