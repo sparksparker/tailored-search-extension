@@ -11,12 +11,12 @@ export const SearchIcon = styled.img`
 `;
 
 export const GoogleQueryText = styled.span`
-  margin-top: 5px;
+  margin-top: 7px;
 `;
 
 export const Version = styled.span`
-  margin-top: 8px;
-  margin-left: -5px;
+  margin-top: 7px;
+  margin-left: -17px;
   font-size: 12px;
   color: purple;
 `;
@@ -24,4 +24,16 @@ export const Version = styled.span`
 export const SearchBoxContainer = styled.form`
   display: grid;
   grid-row-gap: 10px;
+`;
+
+export const CombineLabel = styled.label`
+  margin-bottom: 3px;
+`;
+
+export const Input = styled.input`
+  margin-left: 5px;
+`;
+
+export const CombineInput = styled.input`
+  /* margin-left: -2px; */
 `;

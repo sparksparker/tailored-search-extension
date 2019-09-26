@@ -56,37 +56,40 @@ class SearchBox extends Component {
           <Styled.SearchBoxContainer onSubmit={this.handleSubmit}>
             <label className='label' htmlFor='keyword'>
               Keyword Search:
-              <input type='text' id='keyword' value={this.state.keyword} onChange={this.handleInputChange} />
+              <Styled.Input type='text' id='keyword' value={this.state.keyword} onChange={this.handleInputChange} />
             </label>
             <label className='label' htmlFor='exact'>
               Exact Match:
-              <input type='text' id='exact' value={this.state.exact} onChange={this.handleInputChange} />
+              <Styled.Input type='text' id='exact' value={this.state.exact} onChange={this.handleInputChange} />
             </label>
             <label className='label' htmlFor='exclude'>
               Exclude Words:
-              <input type='text' id='exclude' value={this.state.exclude} onChange={this.handleInputChange} />
+              <Styled.Input type='text' id='exclude' value={this.state.exclude} onChange={this.handleInputChange} />
             </label>
             <label className='label' htmlFor='combine'>
               Combine Searches:
-              <input type='text' id='combine1' value={this.state.combine1} onChange={this.handleInputChange} />
+              <br/>
+              <Styled.CombineInput type='text' id='combine1' value={this.state.combine1} onChange={this.handleInputChange} />
+              {' '}
               OR
-              <input type='text' id='combine2' value={this.state.combine2} onChange={this.handleInputChange} />
+              {' '}
+              <Styled.Input type='text' id='combine2' value={this.state.combine2} onChange={this.handleInputChange} />
             </label>
             <label className='label' htmlFor='specificSite'>
               Specific Site:
-              <input type='text' id='specificSite' value={this.state.specificSite} onChange={this.handleInputChange} />
+              <Styled.Input type='text' id='specificSite' value={this.state.specificSite} onChange={this.handleInputChange} />
             </label>
             <label className='label' htmlFor='relatedSites'>
               Related Sites:
-              <input type='text' id='relatedSites' value={this.state.relatedSites} onChange={this.handleInputChange} />
+              <Styled.Input type='text' id='relatedSites' value={this.state.relatedSites} onChange={this.handleInputChange} />
             </label>
             <label className='label' htmlFor='beforeDate'>
               Before Date (YYYY-MM-DD):
-              <input type='text' id='beforeDate' value={this.state.beforeDate} onChange={this.handleInputChange} />
+              <Styled.Input type='text' id='beforeDate' value={this.state.beforeDate} onChange={this.handleInputChange} />
             </label>
             <label className='label' htmlFor='afterDate'>
               After Date (YYYY-MM-DD):
-              <input type='text' id='afterDate' value={this.state.afterDate} onChange={this.handleInputChange} />
+              <Styled.Input type='text' id='afterDate' value={this.state.afterDate} onChange={this.handleInputChange} />
             </label>
             <input type='submit' value='Go!' />
           </Styled.SearchBoxContainer>
