@@ -8,32 +8,31 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoaded: false,
+      darkModeState: false,
     };
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
-  handleButtonClick() {
-    console.log('handleButton!');
+  handleButtonClick(event) {
+    this.setState({
+      darkModeState: event,
+    });
   }
 
   render() {
-    // if (!this.state.isLoaded) {
-    //   return <div>Loading ..</div>
-    // }
     return (
       <div>
-        <Styled.GlobalStyle />
-        <Styled.DarkModeContainer>
-          <Styled.DarkMode>Dark Mode</Styled.DarkMode>
-          <SwitchButton />
-        </Styled.DarkModeContainer>
+        <Styled.GlobalStyle currentState={this.state.darkModeState} />
+        <Styled.Container>
+          <Styled.DarkModeText currentState={this.state.darkModeState}>Dark Mode</Styled.DarkModeText>
+          <SwitchButton onSwitchBtnClick={this.handleButtonClick} switchState={this.state.checked} />
+        </Styled.Container>
         <Styled.Box>
           <Styled.SearchIcon src={logo}></Styled.SearchIcon>
-          <Styled.GoogleQueryText>Google Query</Styled.GoogleQueryText>
-          <Styled.Version>(1.0.0)</Styled.Version>
+          <Styled.GoogleQueryText currentState={this.state.darkModeState}>Google Query</Styled.GoogleQueryText>
+          <Styled.Version currentState={this.state.darkModeState}>(1.0.0)</Styled.Version>
         </Styled.Box>
-        <SearchBox onButtonClick={this.handleButtonClick} />
+        <SearchBox currentState={this.state.darkModeState} />
       </div>
     )
   }

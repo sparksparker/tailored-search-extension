@@ -14,7 +14,7 @@ class SwitchButton extends Component {
   handleChange(checked) {
     this.setState({
       checked,
-    });
+    }, () => this.props.onSwitchBtnClick(checked));
   }
 
   render() {

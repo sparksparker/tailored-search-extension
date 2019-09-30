@@ -2,48 +2,48 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    ${'' /* background-color: #404040; */}
+    ${ ({ currentState }) => currentState ? `background-color: #404040` : `background-color: white`};
   }
 `;
 
-export const DarkModeContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   float: right;
 `;
 
-export const DarkMode = styled.span`
-  /* float: right; */
+export const DarkModeText = styled.span`
   font-size: 10px;
   margin-right: 5px;
+
+  ${ ({ currentState }) => currentState ? `color: white` : `color: black`};
 `;
 
 export const Box = styled.div`
   display: flex;
-  /* grid-template-columns: 35px 100px 200px; */
   width: 300px;
-  /* margin-left: 80px; */
   margin-bottom: 8px;
 `;
 
 export const SearchIcon = styled.img`
   width: 30px;
   height: 30px;
-  /* margin-top: 15px; */
   margin-left: 70px;
 `;
 
 export const GoogleQueryText = styled.span`
-  /* color: white; */
   margin-top: 6px;
   margin-left: 4px;
   font-size: 14px;
+
+  ${ ({ currentState }) => currentState ? `color: white` : `color: black`};
 `;
 
 export const Version = styled.span`
-  margin-top: 7px;
+  margin-top: 8px;
   margin-left: 4px;
   font-size: 12px;
-  /* color: #FFD8FC; */
+
+  ${ ({ currentState }) => currentState ? `color: #FFD8FC` : `color: black`};
 `;
 
 export const SearchBoxContainer = styled.form`
@@ -52,7 +52,7 @@ export const SearchBoxContainer = styled.form`
 `;
 
 export const Label = styled.label`
-  /* color: white; */
+  ${ ({ currentState }) => currentState ? `color: white` : `color: black`};
 `;
 
 export const CombineLabel = styled.label`
@@ -61,13 +61,14 @@ export const CombineLabel = styled.label`
 
 export const Input = styled.input`
   margin-left: 5px;
-  /* background-color: #DCDCDC; */
+  
+  ${ ({ currentState }) => currentState ? `background-color: #DCDCDC` : `background-color: white`};
 `;
 
 export const CombineInput = styled.input`
-  /* background-color: #DCDCDC; */
+  ${ ({ currentState }) => currentState ? `background-color: #DCDCDC` : `background-color: white`};
 `;
 
 export const Button = styled.input`
-
+  ${ ({ currentState }) => currentState ? `background-color: #DCDCDC` : `background-color: white`};
 `;
