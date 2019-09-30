@@ -45,7 +45,7 @@ class Search extends Component {
         </Styled.Container>
         <Styled.Box>
           <Styled.SearchIcon src={logo}></Styled.SearchIcon>
-          <Styled.GoogleQueryText currentState={this.state.darkModeState}>Google Query</Styled.GoogleQueryText>
+          <Styled.GoogleQueryText currentState={this.state.darkModeState}>Advanced Google Search</Styled.GoogleQueryText>
           <Styled.Version currentState={this.state.darkModeState}>(1.1.0)</Styled.Version>
         </Styled.Box>
         <SearchBox currentState={this.state.darkModeState} />

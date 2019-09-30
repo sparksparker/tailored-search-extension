@@ -27,7 +27,7 @@ export const Box = styled.div`
 export const SearchIcon = styled.img`
   width: 30px;
   height: 30px;
-  margin-left: 70px;
+  margin-left: 30px;
 `;
 
 export const GoogleQueryText = styled.span`
@@ -61,7 +61,7 @@ export const CombineLabel = styled.label`
 
 export const Input = styled.input`
   margin-left: 5px;
-  
+
   ${ ({ currentState }) => currentState ? `background-color: #DCDCDC` : `background-color: white`};
 `;
 
