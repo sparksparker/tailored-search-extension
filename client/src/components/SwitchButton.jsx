@@ -9,12 +9,26 @@ class SwitchButton extends Component {
       checked: false
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleChromeState = this.handleChromeState.bind(this);
+  }
+
+  componentDidMount() {
+    this.handleChromeState();
   }
 
   handleChange(checked) {
     this.setState({
       checked,
     }, () => this.props.onSwitchBtnClick(checked));
+  }
+
+  handleChromeState() {
+    chrome.storage.sync.get(['state'], (result) => {
+      let state = result.state;
+      this.setState({
+        checked: state,
+      });
+    });
   }
 
   render() {
