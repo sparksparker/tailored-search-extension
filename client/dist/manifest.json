@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Tailored Search",
+  "name": "Advanced Google Search",
   "author": "sparksparker",
-  "version": "1.1.0",
-  "description": "Tailor your Google searches every time",
+  "version": "1.1.1",
+  "description": "Advanced Google Search in seconds!",
   "icons": {
     "16": "./16.png",
     "32": "./32.png",
