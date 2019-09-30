@@ -6,4 +6,3 @@ render(
   <Search />,
   document.getElementById('Search')
 );
-
