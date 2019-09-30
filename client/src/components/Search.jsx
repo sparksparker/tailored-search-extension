@@ -3,7 +3,6 @@ import logo from '../../dist/search-icon.png';
 import SearchBox from './SearchBox';
 import SwitchButton from './SwitchButton';
 import * as Styled from './styled';
-import { DH_CHECK_P_NOT_PRIME } from 'constants';
 
 class Search extends Component {
   constructor(props) {
@@ -47,7 +46,7 @@ class Search extends Component {
         <Styled.Box>
           <Styled.SearchIcon src={logo}></Styled.SearchIcon>
           <Styled.GoogleQueryText currentState={this.state.darkModeState}>Google Query</Styled.GoogleQueryText>
-          <Styled.Version currentState={this.state.darkModeState}>(1.0.0)</Styled.Version>
+          <Styled.Version currentState={this.state.darkModeState}>(1.1.0)</Styled.Version>
         </Styled.Box>
         <SearchBox currentState={this.state.darkModeState} />
       </div>
