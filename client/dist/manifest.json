@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Tailored Search",
   "author": "sparksparker",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Tailor your Google searches every time",
   "icons": {
     "16": "./16.png",
