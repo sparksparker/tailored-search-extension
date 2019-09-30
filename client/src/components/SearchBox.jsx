@@ -20,11 +20,8 @@ class SearchBox extends Component {
   }
 
   handleInputChange(event) {
-    // html tag for target
     const target = event.target;
-    // input id
     const id = target.id;
-    // input text
     const value = target.value;
 
     this.setState({
