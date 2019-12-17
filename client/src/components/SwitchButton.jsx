@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Switch from 'react-switch';
+// import Switch from 'react-switch';
 import * as Styled from './styled';
 
 class SwitchButton extends Component {
   constructor() {
     super();
     this.state = {
-      checked: false
+      checked: true
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleChromeState = this.handleChromeState.bind(this);
@@ -16,10 +16,12 @@ class SwitchButton extends Component {
     this.handleChromeState();
   }
 
-  handleChange(checked) {
+  handleChange() {
+    let checkedState = this.state.checked;
+
     this.setState({
-      checked,
-    }, () => this.props.onSwitchBtnClick(checked));
+      checked: !checkedState
+    }, () => this.props.onSwitchBtnClick(!checkedState));
   }
 
   handleChromeState() {
@@ -33,23 +35,17 @@ class SwitchButton extends Component {
 
   render() {
     return (
-      <label htmlFor="material-switch">
-        <Switch
-          checked={this.state.checked}
-          onChange={this.handleChange}
-          onColor="#86d3ff"
-          onHandleColor="#2693e6"
-          handleDiameter={13}
-          uncheckedIcon={false}
-          checkedIcon={false}
-          boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-          activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-          height={10}
-          width={20}
-          className="react-switch"
-          id="material-switch"
-        />
-      </label>
+      <button
+        onClick={this.handleChange}
+        class='ui circular icon button'
+        style={
+          {
+            'margin-top': '3px',
+            'margin-right': '3px',
+          }
+        }>
+        <i class='sun icon'></i>
+      </button>
     );
   }
 }

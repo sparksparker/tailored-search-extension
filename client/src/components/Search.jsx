@@ -40,7 +40,6 @@ class Search extends Component {
       <div>
         <Styled.GlobalStyle currentState={this.state.darkModeState} />
         <Styled.Container>
-          <Styled.DarkModeText currentState={this.state.darkModeState}>Dark Mode</Styled.DarkModeText>
           <SwitchButton onSwitchBtnClick={this.handleButtonClick} switchState={this.state.checked} />
         </Styled.Container>
         <Styled.Box>
