@@ -27,12 +27,13 @@ export const Box = styled.div`
 export const SearchIcon = styled.img`
   width: 30px;
   height: 30px;
-  margin-left: 30px;
+  margin-left: 55px;
+  margin-top: -31px;
 `;
 
 export const GoogleQueryText = styled.span`
-  margin-top: 6px;
-  margin-left: 4px;
+  margin-top: -25px;
+  margin-left: 8px;
   font-size: 14px;
 
   ${ ({ currentState }) => currentState ? `color: white` : `color: black`};

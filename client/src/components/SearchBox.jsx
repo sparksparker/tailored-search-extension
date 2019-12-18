@@ -49,13 +49,26 @@ class SearchBox extends Component {
   render() {
     return (
       <div>
-        <div className='header'>
+        <div class='header'>
           <Styled.SearchBoxContainer onSubmit={this.handleSubmit}>
             <Styled.Label htmlFor='keyword' currentState={this.props.currentState}>
+            <div
+                class="ui inverted divider"
+                style={ {
+                  'margin-top': '-2px'
+                } }>
+            </div>
               Keyword Search:
               <Styled.Input type='text' id='keyword' value={this.state.keyword} onChange={this.handleInputChange} currentState={this.props.currentState} />
             </Styled.Label>
             <Styled.Label htmlFor='exact' currentState={this.props.currentState}>
+              {/* <div
+                class="ui inverted divider"
+                style={ {
+                  // 'margin-top': '-2px',
+                  'margin-bottom': '-2px',
+                } }>
+              </div> */}
               Exact Match:
               <Styled.Input type='text' id='exact' value={this.state.exact} onChange={this.handleInputChange} currentState={this.props.currentState} />
             </Styled.Label>
@@ -88,7 +101,12 @@ class SearchBox extends Component {
               After Date (YYYY-MM-DD):
               <Styled.Input type='text' id='afterDate' value={this.state.afterDate} onChange={this.handleInputChange} currentState={this.props.currentState} />
             </Styled.Label>
-            <Styled.Button type='submit' value='Go!' currentState={this.props.currentState} />
+            <button class='ui vertical animated button'>
+              <div class='visible content'>
+                <i class='search icon'></i>
+              </div>
+              <div class='hidden content'>Go!</div>
+            </button>
           </Styled.SearchBoxContainer>
         </div>
       </div>
