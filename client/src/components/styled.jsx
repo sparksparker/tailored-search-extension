@@ -2,13 +2,12 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   body {
+    min-width: 100px;
+    margin-left: 13px;
+    margin-right: 13px;
+
     ${ ({ currentState }) => currentState ? `background-color: #404040` : `background-color: white`};
   }
-`;
-
-export const Container = styled.div`
-  display: flex;
-  float: right;
 `;
 
 export const DarkModeText = styled.span`
@@ -21,7 +20,7 @@ export const DarkModeText = styled.span`
 export const Box = styled.div`
   display: flex;
   width: 300px;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 `;
 
 export const SearchIcon = styled.img`
@@ -32,9 +31,8 @@ export const SearchIcon = styled.img`
 `;
 
 export const GoogleQueryText = styled.span`
-  margin-top: -25px;
-  margin-left: 8px;
-  font-size: 14px;
+  margin-top: -22px;
+  font-size: 16px;
 
   ${ ({ currentState }) => currentState ? `color: white` : `color: black`};
 `;
@@ -48,12 +46,12 @@ export const Version = styled.span`
 `;
 
 export const SearchBoxContainer = styled.form`
-  display: grid;
-  grid-row-gap: 10px;
+  /* display: grid;
+  grid-row-gap: 10px; */
 `;
 
 export const Label = styled.label`
-  ${ ({ currentState }) => currentState ? `color: white` : `color: black`};
+  ${ ({ currentState }) => currentState ? `color: white !important` : `color: black !important`};
 `;
 
 export const CombineLabel = styled.label`
@@ -61,9 +59,7 @@ export const CombineLabel = styled.label`
 `;
 
 export const Input = styled.input`
-  margin-left: 5px;
-
-  ${ ({ currentState }) => currentState ? `background-color: #DCDCDC` : `background-color: white`};
+  ${ ({ currentState }) => currentState ? `background-color: #DCDCDC !important` : `background-color: white`};
 `;
 
 export const CombineInput = styled.input`

@@ -30,6 +30,7 @@ class SearchBox extends Component {
   }
 
   handleSubmit(event) {
+    console.log('clicked')
     event.preventDefault();
 
     const keyword = this.state.keyword ? this.state.keyword : '';
@@ -49,66 +50,96 @@ class SearchBox extends Component {
   render() {
     return (
       <div>
-        <div class='header'>
-          <Styled.SearchBoxContainer onSubmit={this.handleSubmit}>
-            <Styled.Label htmlFor='keyword' currentState={this.props.currentState}>
-            <div
-                class="ui inverted divider"
-                style={ {
-                  'margin-top': '-2px'
-                } }>
+        <form class='ui form' onSubmit={this.handleSubmit}>
+          <div class='equal width fields'>
+            {/* keyword search */}
+            <div class='field' style={ {'margin-bottom': 1} }>
+              <Styled.Label htmlFor='keyword' currentState={this.props.currentState}>
+                Keyword Search:
+                <div class='ui mini input'>
+                  <Styled.Input type='text' placeholder='Keyword..' id='keyword' value={this.state.keyword} onChange={this.handleInputChange} currentState={this.props.currentState} />
+                </div>
+              </Styled.Label>
             </div>
-              Keyword Search:
-              <Styled.Input type='text' id='keyword' value={this.state.keyword} onChange={this.handleInputChange} currentState={this.props.currentState} />
-            </Styled.Label>
-            <Styled.Label htmlFor='exact' currentState={this.props.currentState}>
-              {/* <div
-                class="ui inverted divider"
-                style={ {
-                  // 'margin-top': '-2px',
-                  'margin-bottom': '-2px',
-                } }>
-              </div> */}
-              Exact Match:
-              <Styled.Input type='text' id='exact' value={this.state.exact} onChange={this.handleInputChange} currentState={this.props.currentState} />
-            </Styled.Label>
-            <Styled.Label htmlFor='exclude' currentState={this.props.currentState}>
-              Exclude Words:
-              <Styled.Input type='text' id='exclude' value={this.state.exclude} onChange={this.handleInputChange} currentState={this.props.currentState} />
-            </Styled.Label>
-            <Styled.Label htmlFor='combine' currentState={this.props.currentState}>
-              Combine Searches:
-              <br/>
-              <Styled.CombineInput type='text' id='combine1' value={this.state.combine1} onChange={this.handleInputChange} currentState={this.props.currentState} />
-              {' '}
-              OR
-              {' '}
-              <Styled.Input type='text' id='combine2' value={this.state.combine2} onChange={this.handleInputChange} currentState={this.props.currentState} />
-            </Styled.Label>
-            <Styled.Label htmlFor='specificSite' currentState={this.props.currentState}>
-              Specific Site:
-              <Styled.Input type='text' id='specificSite' value={this.state.specificSite} onChange={this.handleInputChange} currentState={this.props.currentState} />
-            </Styled.Label>
-            <Styled.Label htmlFor='relatedSites' currentState={this.props.currentState}>
-              Related Sites:
-              <Styled.Input type='text' id='relatedSites' value={this.state.relatedSites} onChange={this.handleInputChange} currentState={this.props.currentState} />
-            </Styled.Label>
-            <Styled.Label htmlFor='beforeDate' currentState={this.props.currentState}>
-              Before Date (YYYY-MM-DD):
-              <Styled.Input type='text' id='beforeDate' value={this.state.beforeDate} onChange={this.handleInputChange} currentState={this.props.currentState} />
-            </Styled.Label>
-            <Styled.Label htmlFor='afterDate' currentState={this.props.currentState}>
-              After Date (YYYY-MM-DD):
-              <Styled.Input type='text' id='afterDate' value={this.state.afterDate} onChange={this.handleInputChange} currentState={this.props.currentState} />
-            </Styled.Label>
-            <button class='ui vertical animated button'>
+            {/* exact match */}
+            <div class='field' style={ {'margin-bottom': 1} }>
+              <Styled.Label htmlFor='exact' currentState={this.props.currentState}>
+                Exact Match:
+                <div class='ui mini input'>
+                  <Styled.Input type='text' placeholder='Exact match..' id='exact' value={this.state.exact} onChange={this.handleInputChange} currentState={this.props.currentState} />
+                </div>
+              </Styled.Label>
+            </div>
+            {/* exclude */}
+            <div class='field' style={ {'margin-bottom': 1} }>
+              <Styled.Label htmlFor='exclude' currentState={this.props.currentState}>
+                Exclude Words:
+                <div class='ui mini input'>
+                  <Styled.Input type='text' placeholder='Exclude words..' id='exclude' value={this.state.exclude} onChange={this.handleInputChange} currentState={this.props.currentState} />
+                </div>
+              </Styled.Label>
+            </div>
+            {/* combine */}
+            <div class='field' style={ {'margin-bottom': 1} }>
+              <Styled.Label htmlFor='combine' currentState={this.props.currentState}>
+                Combine Searches:
+                {/* comebine1 */}
+                <div class='ui mini input' style={ {'margin-bottom': 5} } >
+                  <Styled.Input type='text' placeholder='Combine 1st search..' id='combine1' value={this.state.combine1} onChange={this.handleInputChange} currentState={this.props.currentState} />
+                </div>
+                {/* comebine2 */}
+                <div class='ui mini input'>
+                  <Styled.Input type='text' placeholder='With 2nd search..' id='combine2' value={this.state.combine2} onChange={this.handleInputChange} currentState={this.props.currentState} />
+                </div>
+              </Styled.Label>
+            </div>
+            {/* specific site */}
+            <div class='field' style={ {'margin-bottom': 1} }>
+              <Styled.Label htmlFor='specificSite' currentState={this.props.currentState}>
+                Specific Site:
+                <div class='ui mini input'>
+                  <Styled.Input type='text' placeholder='Specific site..' id='specificSite' value={this.state.specificSite} onChange={this.handleInputChange} currentState={this.props.currentState} />
+                </div>
+              </Styled.Label>
+            </div>
+            {/* related sites */}
+            <div class='field' style={ {'margin-bottom': 1} }>
+              <Styled.Label htmlFor='relatedSites' currentState={this.props.currentState}>
+                Related Sites:
+                <div class='ui mini input'>
+                  <Styled.Input type='text' placeholder='Related sites..' id='relatedSites' value={this.state.relatedSites} onChange={this.handleInputChange} currentState={this.props.currentState} />
+                </div>
+              </Styled.Label>
+            </div>
+            {/* Before Date YYYY-MM-DD */}
+            <div class='field' style={ {'margin-bottom': 1} }>
+              <Styled.Label htmlFor='beforeDate' currentState={this.props.currentState}>
+                Before Date:
+                <div class='ui mini input'>
+                  <Styled.Input type='text' placeholder='YYYY-MM-DD' id='beforeDate' value={this.state.beforeDate} onChange={this.handleInputChange} currentState={this.props.currentState} />
+                </div>
+              </Styled.Label>
+            </div>
+            {/* After Date YYYY-MM-DD */}
+            <div class='field' style={ {'margin-bottom': 5} }>
+              <Styled.Label htmlFor='afterDate' currentState={this.props.currentState}>
+                After Date:
+                <div class='ui mini input'>
+                  <Styled.Input type='text' placeholder='YYYY-MM-DD' id='afterDate' value={this.state.afterDate} onChange={this.handleInputChange} currentState={this.props.currentState} />
+                </div>
+              </Styled.Label>
+            </div>
+          </div>
+          {/* button */}
+          <div style={ {'display': 'flex', 'justify-content': 'center', 'margin-bottom': 10} }>
+            <button class='ui vertical animated button' style={ {'align-items': 'center'} }>
               <div class='visible content'>
                 <i class='search icon'></i>
               </div>
               <div class='hidden content'>Go!</div>
             </button>
-          </Styled.SearchBoxContainer>
-        </div>
+          </div>
+        </form>
       </div>
     );
   }

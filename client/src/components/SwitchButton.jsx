@@ -39,7 +39,8 @@ class SwitchButton extends Component {
         style={
           {
             'margin-top': '3px',
-            'margin-right': '3px',
+            'margin-right': '-10px',
+            'float': 'right',
           }
         }>
         <i class='sun icon'></i>
